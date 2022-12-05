@@ -113,7 +113,7 @@
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <h4 class="title">1</h4>
-              <select name="year1" id="year1" title="년도"></select>
+              <p>Year: <select name="year1" id="year1" title="년도"></select></p>
               <button id="y2e_btn"><i class="bi bi-person-fill"></i></button>
               <div>
                 <span id="year1_age_ko"></span><br>
@@ -123,23 +123,42 @@
             </div>
           </div>
           <!--End Icon Box -->
-<!-- era2year -->
+<!-- date2era -->
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <h4 class="title">2</h4>
-              <input type="text" value="">&nbsp&nbsp
-              <button><i class="bi bi-person-fill"></i></button>
-              <div><span></span></div>
+              <p>Date: <input type="text" id="dp" readonly></p>
+              <button id="d2e_btn"><i class="bi bi-person-fill"></i></button>
+              <div>
+                <span id="year2_age_ko"></span><br>
+                <span id="year2_age_man"></span><br>
+                <span id="year2_era"></span>
+                <span id="year2_era_year"></span>
+              </div>
             </div>
           </div>
           <!--End Icon Box -->
-
+<!-- era2year -->
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
               <h4 class="title">3</h4>
-              <input type="text" value="">&nbsp&nbsp
-              <button><i class="bi bi-person-fill"></i></button>
-              <div><span></span></div>
+              <p>era: 
+                <select name="year3" id="year3" title="연호">
+                  <option value="">연호</option>
+                  <option value="rei">레이와</option>
+                  <option value="hei">헤이세이</option>
+                  <option value="sho">쇼와</option>
+                  <option value="dai">다이쇼</option>
+                  <option value="mei">메이지</option>
+                </select>
+                <select id="year3_num" style="display:none;">                  
+                </select>
+              </p>
+              <button id="e2y_btn"><i class="bi bi-person-fill"></i></button>
+              <div>
+                <span id="year3_year"></span>
+                <span id="year3_age_ko"></span>
+              </div>
             </div>
           </div>
           <!--End Icon Box -->
@@ -543,7 +562,13 @@
   <script src="assets/js/main.js"></script>
   <!-- ringring395 JS File -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="assets/js/year2era_1.js"></script>
+  <script src="assets/js/year2era.js"></script>
+  <script src="assets/js/date2era.js"></script>
+  <script src="assets/js/era2year.js"></script>
+
+  <!-- jquery UI -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script> 
 
 </body>
 
