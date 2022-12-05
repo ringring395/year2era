@@ -17,6 +17,9 @@
 
     //1번의 버튼을 클릭하면
     $("#y2e_btn").on("click", function(){
+        //빈값으로 리셋하고,
+        $("#year1_era").text("");
+        $("#year1_era_year").text("");
         //선택한 옵션 값 = 선택 년도
         var select_year1 = $("#year1 option:selected").val();
         y2e_age1(select_year1);  //나이 함수 호출
@@ -30,6 +33,7 @@ function y2e_age1(select_year1){
     var age_ko = com_year - select_year1 +1;
     $("#year1_age_ko").text("한국나이 : "+age_ko)
 }
+
 //선택한 값으로, y2e_era1 함수 정의
 function y2e_era1(select_year1){
     //연호의 년도
@@ -52,16 +56,35 @@ function y2e_era1(select_year1){
         $("#year1_era_year").text(era1_year);
     }
     //hei&sho
-
+    else if(select_year1==1989){
+        $("#year1_era").text("헤이세이 1년 / 쇼와 64년")
+    }
     //sho
-
+    else if(select_year1>1926 && select_year1<1989){
+        $("#year1_era").text("쇼와");
+        era1_year = select_year1 - 1926 +1;
+        $("#year1_era_year").text(era1_year);
+    }
     //sho&dai
-
+    else if(select_year1==1926){
+        $("year1_era").text("쇼와 1년 / 다이쇼 15년");
+    }
     //dai
-
+    else if(select_year1>1912 && select_year1<1926){
+        $("#year1_era").text("다이쇼");
+        era1_year = select_year1 - 1912 +1;
+        $("#year1_era_year").text(era1_year);        
+    }
     //dai&mei
-
+    else if(select_year1==1912){
+        $("#year1_era").text("다이쇼 1년 / 메이지 45년");
+    }
     //mei
+    else if(select_year1>=1868 && select_year1<1912){
+        $("#year1_era").text("메이지");
+        era1_year = select_year1 - 1868 +1;
+        $("#year1_era_year").text(era1_year);
+    }
 }
     
 
