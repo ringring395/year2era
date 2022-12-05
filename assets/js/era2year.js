@@ -10,6 +10,7 @@
 
 
     //select 박스 선택 이벤트
+    //연호에 따라서 선택 숫자 범위 달라짐
     $("#year3").on("change", function(){
         //선택한 연호는?
         var select_era = $("#year3 option:selected").val();
@@ -17,8 +18,9 @@
         $("#year3_num").show();
         // 숫자 범위 넣기
         $("#year3_num").append("<option value=''>년도</option>");
-        //연호에 따라서 선택 숫자 범위 달라짐
-        //레이와 선택했을때,
+        //두번째 selectbox는 첫줄빼고 초기화되어야함.
+        $("#year3_num").children("option:not(:first)").remove();
+        //레이와 선택했을때
         if(select_era=="rei"){
             for(var r=1; r<=(com_year-2018); r++){
                 $("#year3_num").append("<option value='"+r+"'>"+r+" 년"+"</option>");
