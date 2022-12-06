@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>연호 변환</title>
+  <title>연호 변환 year2era</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -42,7 +42,7 @@
   <section id="topbar" class="topbar d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
-        <li class="bi d-flex align-items-center">일본 연호를 입력해서 년도, 나이로 알아봅시다. 반대 버전도 가능 'ㅅ'</li>
+        <li class="bi d-flex align-items-center">일본 연호를 입력해서 년도, 나이로 알아봅시다. 반대로도 가능 'ㅅ'</li>
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
         <a href="https://blog.naver.com/ringring395" class="display"><i class="bi bi-display"></i></a>
@@ -58,7 +58,7 @@
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1>ringring<span>.</span></h1>
+        <h1>year2era<span style="font-size:15px;">by.ringring395</span></h1>
       </a>
 
       <!-- 네비메뉴
@@ -112,13 +112,13 @@
 <!-- year2era -->
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
-              <h4 class="title">1</h4>
-              <p>Year: <select name="year1" id="year1" title="년도"></select></p>
-              <button id="y2e_btn"><i class="bi bi-person-fill"></i></button>
+              <h4 class="title">년도 → 연호, 나이</h4>
+              <p>Year: <select name="year1" id="year1" title="년도"></select>
+              <button id="y2e_btn" style="border:none;"><i class="bi bi-arrow-down"></i></button></p>
               <div>
-                <span id="year1_age_ko"></span><br>
-                <span id="year1_era"></span>
-                <span id="year1_era_year"></span>
+                <p><span id="year1_era"></span>
+                  <span id="year1_era_year"></span></p>
+                <p id="year1_age_ko"></p>  
               </div>
             </div>
           </div>
@@ -126,14 +126,14 @@
 <!-- date2era -->
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
-              <h4 class="title">2</h4>
-              <p>Date: <input type="text" id="dp" readonly></p>
-              <button id="d2e_btn"><i class="bi bi-person-fill"></i></button>
+              <h4 class="title">날짜 → 연호, 나이</h4>
+              <p>Date: <input type="text" id="dp" readonly>
+              <button id="d2e_btn" style="border:none;"><i class="bi bi-arrow-down"></i></button></p>
               <div>
-                <span id="year2_age_ko"></span><br>
-                <span id="year2_age_man"></span><br>
-                <span id="year2_era"></span>
-                <span id="year2_era_year"></span>
+                <p><span id="year2_era"></span>
+                  <span id="year2_era_year"></span></p>                
+                <p id="year2_age_ko"></p>
+                <p id="year2_age_man"></p>
               </div>
             </div>
           </div>
@@ -141,8 +141,8 @@
 <!-- era2year -->
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
-              <h4 class="title">3</h4>
-              <p>era: 
+              <h4 class="title">연호 → 년도, 나이</h4>
+              <p>Era: 
                 <select name="year3" id="year3" title="연호">
                   <option value="">연호</option>
                   <option value="rei">레이와</option>
@@ -153,11 +153,10 @@
                 </select>
                 <select id="year3_num" style="display:none;">                  
                 </select>
-              </p>
-              <button id="e2y_btn"><i class="bi bi-person-fill"></i></button>
+              <button id="e2y_btn" style="border:none;"><i class="bi bi-arrow-down"></i></button></p>
               <div>
-                <span id="year3_year"></span>
-                <span id="year3_age_ko"></span>
+                <p id="year3_year"></p>
+                <p id="year3_age_ko"></p>
               </div>
             </div>
           </div>
@@ -165,10 +164,8 @@
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
-              <h4 class="title">4</h4>
-              <input type="text" value="">&nbsp&nbsp
-              <button><i class="bi bi-person-fill"></i></button>
-              <div><span></span></div>
+              <h4 class="title">전체 초기화</h4>
+              <button id="btn4" style="border:none;"><i class="bi bi-arrow-counterclockwise"></i></button>
             </div>
           </div>
           <!--End Icon Box -->
@@ -246,25 +243,89 @@
       </div>
     </section> End Clients Section -->
 
-    <!-- ======= Stats Counter Section ======= 
+    <!-- ======= Stats Counter Section ======= -->
     <section id="stats-counter" class="stats-counter">
       <div class="container" data-aos="fade-up">
-
         <div class="row gy-4 align-items-center">
-
+<!-- rei -->
           <div class="col-lg-6">
-
             <div class="stats-item d-flex align-items-center">
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Happy Clients</strong> consequuntur quae diredo para mesta</p>
+              <span data-purecounter-start="0" data-purecounter-end="2019" data-purecounter-duration="1" class="purecounter"></span>
+              <span>.</span>
+              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
+              <span>.</span>
+              <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
+              <span>~&nbsp;&nbsp;</span>
+              <p><strong>레이와</strong><br>
+                2019년 05월 01일 ~ <br>
+                reiwa&nbsp;&nbsp;令和&nbsp;&nbsp;れいわ
+              </p>
             </div>
-
           </div>
-
+<!-- hei -->
+          <div class="col-lg-6">
+            <div class="stats-item d-flex align-items-center">
+              <span data-purecounter-start="0" data-purecounter-end="1989" data-purecounter-duration="1" class="purecounter"></span>
+              <span>.</span>
+              <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
+              <span>.</span>
+              <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
+              <span>~&nbsp;&nbsp;</span>
+              <p><strong>헤이세이</strong><br>
+                1989년 01월 08일 ~ 2019년 04월 30일<br>
+                heisei&nbsp;&nbsp;平成&nbsp;&nbsp;へいせい
+              </p>
+            </div>
+          </div>
+<!-- sho -->
+          <div class="col-lg-6">
+            <div class="stats-item d-flex align-items-center">
+              <span data-purecounter-start="0" data-purecounter-end="1926" data-purecounter-duration="1" class="purecounter"></span>
+              <span>.</span>
+              <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span>
+              <span>.</span>
+              <span data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1" class="purecounter"></span>
+              <span>~&nbsp;&nbsp;</span>
+              <p><strong>쇼와</strong><br>
+                1926년 12월 25일 ~ 1989년 01월 07일<br>
+                showa&nbsp;&nbsp;昭和&nbsp;&nbsp;しょうわ
+              </p>
+            </div>
+          </div>
+<!-- dai -->
+          <div class="col-lg-6">
+            <div class="stats-item d-flex align-items-center">
+              <span data-purecounter-start="0" data-purecounter-end="1912" data-purecounter-duration="1" class="purecounter"></span>
+              <span>.</span>
+              <span data-purecounter-start="0" data-purecounter-end="7" data-purecounter-duration="1" class="purecounter"></span>
+              <span>.</span>
+              <span data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="1" class="purecounter"></span>
+              <span>~&nbsp;&nbsp;</span>
+              <p><strong>다이쇼</strong><br>
+                1912년 07월 30일 ~ 1926년 12월 25일<br>
+                taisho&nbsp;&nbsp;大正&nbsp;&nbsp;たいしょ
+              </p>
+            </div>
+          </div>
+<!-- mei -->
+          <div class="col-lg-6">
+            <div class="stats-item d-flex align-items-center">
+              <span data-purecounter-start="0" data-purecounter-end="1868" data-purecounter-duration="1" class="purecounter"></span>
+              <span>.</span>
+              <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+              <span>.</span>
+              <span data-purecounter-start="0" data-purecounter-end="23" data-purecounter-duration="1" class="purecounter"></span>
+              <span>~&nbsp;&nbsp;</span>
+              <p><strong>메이지</strong><br>
+                1868년 10월 23일 ~ 1912년 07월 30일<br>
+                meiji&nbsp;&nbsp;明治&nbsp;&nbsp;めいじ
+              </p>
+            </div>
+          </div>
         </div>
 
       </div>
-    </section> End Stats Counter Section -->
+    </section><!-- End Stats Counter Section -->
 
     <!-- ======= Call To Action Section ======= 
     <section id="call-to-action" class="call-to-action">
@@ -531,7 +592,7 @@
 
     <div class="container mt-4">
       <div class="copyright">
-        &copy; Copyright <strong><span>ringring</span></strong>. All Rights Reserved
+        &copy; <strong><span>2022.ringring395</span></strong> All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
