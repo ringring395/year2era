@@ -6,8 +6,8 @@
 ##### 이번에는 거꾸로
 *연호 선택해서 년도, 나이 알아보기
 ***
-#### 블로그
-[블로그 바로가기](https://blog.naver.com/ringring395)           
+#### ringring395 블로그
+[바로가기](https://blog.naver.com/ringring395)           
 
 
 
