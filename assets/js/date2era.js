@@ -96,34 +96,28 @@ function d2e_era1(dp_full,dp_year){
         $("#year2_era").text("레이와");
         era2_year = dp_year - 2019 +1;
         $("#year2_era_year").text(era2_year+"년");
-    }
-    //hei
+    }//hei
     else if(dp_full>=19890108 && dp_full<=20190430){
         $("#year2_era").text("헤이세이");
         era2_year = dp_year - 1989 +1;
         $("#year2_era_year").text(era2_year+"년");        
-    }
-    //sho
+    }//sho
     else if(dp_full>19261225 && dp_full<=19890107){
         $("#year2_era").text("쇼와");
         era2_year = dp_year - 1926 +1;
         $("#year2_era_year").text(era2_year+"년");
-    }
-    //sho&dai
+    }//sho&dai
     else if(dp_full == 19261225){
         $("#year2_era").text("쇼와 1년 / 다이쇼 15년");
-    }
-    //dai
+    }//dai
     else if(dp_full>19120730 && dp_date<19261225){
         $("#year2_era").text("다이쇼");
         era2_year = dp_year - 1912 +1;
         $("#year2_era_year").text(era2_year+"년");
-    }
-    //dai&mei
+    }//dai&mei
     else if(dp_full == 19120730){
         $("#year2_era").text("다이쇼 1년 / 메이지 45년");
-    }
-    //mei
+    }//mei
     else if(dp_full>=18681023 && dp_full<19120730){
         $("#year2_era").text("메이지");
         era2_year = dp_year - 1868 +1;
